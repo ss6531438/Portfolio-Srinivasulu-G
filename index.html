@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Srinivasulu G — Full-Stack &amp; AI Engineer Portfolio</title>
+<meta name="description" content="Portfolio of Srinivasulu G — CSE student (8.6 CGPA), IISc CYSECK cybersecurity intern, two-time NASA Space Apps Global Nominee. Full-stack, AI and security engineering." />
+<link rel="canonical" href="/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Srinivasulu G — Full-Stack &amp; AI Engineer" />
+<meta property="og:description" content="Two-time NASA Space Apps Global Nominee. IISc CYSECK intern. Building AI, full-stack and security systems." />
+<meta property="og:url" content="/" />
+<meta property="og:image" content="https://stellar-stories-space-weather-throu.vercel.app/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Srinivasulu G — Full-Stack &amp; AI Engineer" />
+<meta name="twitter:description" content="Two-time NASA Space Apps Global Nominee. IISc CYSECK intern. Full-stack, AI and security engineering." />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bg: '#050816', surface: '#0B1220', line: 'rgba(255,255,255,.08)',
+        ink: '#FFFFFF', sub: '#A1A1AA', accent: '#4F8CFF', success: '#00D26A'
+      },
+      fontFamily: {
+        sans: ['"Inter Tight"','system-ui','sans-serif'],
+        serif: ['"Instrument Serif"','Georgia','serif'],
+        mono: ['"JetBrains Mono"','ui-monospace','monospace']
+      }
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Srinivasulu G","jobTitle":"Full-Stack & AI Engineer","email":"mailto:1MP24CS405@bgscet.ac.in","telephone":"+91-9741967599","address":{"@type":"PostalAddress","addressLocality":"Bengaluru","addressCountry":"India"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"BGS College of Engineering & Technology"},{"@type":"EducationalOrganization","name":"IR Polytechnic"}],"sameAs":["https://github.com/ss6531438","https://www.linkedin.com/in/srinivasulu-g-71673b358/"]}
+</script>
+<style>
+  :root{ --bg:#050816; --surface:#0B1220; --line:rgba(255,255,255,.08); --accent:#4F8CFF; }
+  *{ -webkit-tap-highlight-color:transparent }
+  html,body{ background:var(--bg); color:#fff }
+  body{ font-family:"Inter Tight",system-ui,sans-serif; overflow-x:hidden; letter-spacing:-.011em }
+  ::selection{ background:rgba(79,140,255,.32) }
+  ::-webkit-scrollbar{ width:9px } ::-webkit-scrollbar-track{ background:#050816 }
+  ::-webkit-scrollbar-thumb{ background:#1b2436; border-radius:9px } ::-webkit-scrollbar-thumb:hover{ background:#2a3550 }
+
+  .glass{ background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015)); border:1px solid var(--line); backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%) }
+  .card-hover{ transition:transform .55s cubic-bezier(.16,1,.3,1), border-color .4s, box-shadow .55s }
+  .card-hover:hover{ transform:translateY(-6px); border-color:rgba(79,140,255,.35); box-shadow:0 30px 70px -30px rgba(79,140,255,.35) }
+  .grad-text{ background:linear-gradient(180deg,#fff 30%,#8ea3c9 100%); -webkit-background-clip:text; background-clip:text; color:transparent }
+  .accent-text{ background:linear-gradient(100deg,#4F8CFF,#7ad0ff 55%,#00D26A); -webkit-background-clip:text; background-clip:text; color:transparent }
+  .hairline{ height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent) }
+  .grid-bg{ background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px); background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 32%,#000 30%,transparent 78%); mask-image:radial-gradient(ellipse 75% 65% at 50% 32%,#000 30%,transparent 78%) }
+
+  /* reveal */
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1) }
+  .reveal.in{ opacity:1; transform:none }
+  @media (prefers-reduced-motion:reduce){ .reveal{ opacity:1!important; transform:none!important; transition:none!important } * { animation:none!important } }
+
+  /* cursor */
+  #cursor-glow{ position:fixed; inset:0; pointer-events:none; z-index:5; transition:opacity .5s;
+    background:radial-gradient(420px circle at var(--mx,50%) var(--my,10%), rgba(79,140,255,.10), transparent 62%) }
+  @media (max-width:900px){ #cursor-glow{ display:none } }
+
+  /* loader */
+  #loader{ position:fixed; inset:0; z-index:100; background:#050816; display:grid; place-items:center; transition:opacity .9s cubic-bezier(.16,1,.3,1), visibility .9s }
+  #loader.done{ opacity:0; visibility:hidden }
+  .load-bar{ width:min(280px,60vw); height:2px; background:rgba(255,255,255,.1); overflow:hidden; border-radius:2px }
+  .load-bar i{ display:block; height:100%; width:0%; background:linear-gradient(90deg,#4F8CFF,#00D26A); transition:width .25s ease-out }
+  .fade-up-l{ animation:fadeUp 1s cubic-bezier(.16,1,.3,1) both }
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(14px) } to{ opacity:1; transform:none } }
+
+  .float-slow{ animation:floaty 9s ease-in-out infinite }
+  @keyframes floaty{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-14px) } }
+  .shimmer{ background:linear-gradient(90deg,transparent,rgba(255,255,255,.10),transparent); background-size:200% 100%; animation:sh 2.6s linear infinite }
+  @keyframes sh{ from{ background-position:200% 0 } to{ background-position:-200% 0 } }
+  .caret::after{ content:''; display:inline-block; width:.6ch; height:1.05em; background:#4F8CFF; margin-left:.15ch; vertical-align:-.14em; animation:blink 1.05s steps(1) infinite }
+  @keyframes blink{ 50%{ opacity:0 } }
+  .magnetic{ transition:transform .28s cubic-bezier(.16,1,.3,1) }
+  .navlink{ position:relative }
+  .navlink::after{ content:''; position:absolute; left:0; bottom:-5px; height:1px; width:100%; background:#4F8CFF; transform:scaleX(0); transform-origin:right; transition:transform .4s cubic-bezier(.16,1,.3,1) }
+  .navlink:hover::after,.navlink[aria-current="true"]::after{ transform:scaleX(1); transform-origin:left }
+  .chip{ border:1px solid var(--line); background:rgba(255,255,255,.03); transition:all .35s cubic-bezier(.16,1,.3,1) }
+  .chip:hover{ border-color:rgba(79,140,255,.5); background:rgba(79,140,255,.10); transform:translateY(-3px) }
+  a:focus-visible,button:focus-visible{ outline:2px solid #4F8CFF; outline-offset:3px; border-radius:8px }
+  .shot{ mask-image:linear-gradient(180deg,#000 68%,transparent); -webkit-mask-image:linear-gradient(180deg,#000 68%,transparent) }
+</style>
+</head>
+<body class="bg-bg text-ink antialiased">
+
+<!-- LOADER -->
+<div id="loader" role="status" aria-live="polite">
+  <div class="text-center px-6">
+    <div class="font-serif italic text-2xl md:text-4xl text-white/90 fade-up-l">“Build like someone will read every line.”</div>
+    <div class="mt-3 text-xs tracking-[.35em] uppercase text-sub fade-up-l" style="animation-delay:.15s">Srinivasulu G</div>
+    <div class="load-bar mx-auto mt-9"><i id="loadfill"></i></div>
+    <div class="mt-3 font-mono text-[11px] text-sub"><span id="loadpct">0</span>%</div>
+  </div>
+</div>
+
+<div id="cursor-glow" aria-hidden="true"></div>
+<div class="fixed top-0 left-0 h-[2px] z-50 bg-gradient-to-r from-accent to-success" id="progress" style="width:0"></div>
+
+<!-- NAV -->
+<header class="fixed top-4 inset-x-0 z-40 px-4">
+  <nav class="glass mx-auto flex max-w-5xl items-center justify-between rounded-full py-2.5 pl-5 pr-2.5" aria-label="Primary">
+    <a href="#hero" class="flex items-center gap-2.5 text-sm font-semibold tracking-tight">
+      <span class="grid h-7 w-7 place-items-center rounded-full bg-accent/15 text-accent font-mono text-xs">SG</span>
+      <span class="hidden sm:inline">Srinivasulu G</span>
+    </a>
+    <div class="hidden items-center gap-7 text-[13px] text-sub md:flex">
+      <a class="navlink hover:text-ink transition" href="#about">About</a>
+      <a class="navlink hover:text-ink transition" href="#work">Work</a>
+      <a class="navlink hover:text-ink transition" href="#stack">Stack</a>
+      <a class="navlink hover:text-ink transition" href="#experience">Experience</a>
+      <a class="navlink hover:text-ink transition" href="#achievements">Awards</a>
+      <a class="navlink hover:text-ink transition" href="#github">GitHub</a>
+    </div>
+    <a href="#contact" class="magnetic rounded-full bg-ink px-4 py-2 text-[13px] font-medium text-bg transition hover:opacity-90">Get in touch</a>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="hero" class="relative flex min-h-[100svh] items-center overflow-hidden px-6 pt-32 pb-20">
+  <div class="grid-bg pointer-events-none absolute inset-0"></div>
+  <div class="pointer-events-none absolute -top-40 left-1/2 h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-accent/20 blur-[150px]"></div>
+  <div class="pointer-events-none absolute bottom-[-160px] right-[-80px] h-[420px] w-[420px] rounded-full bg-success/10 blur-[150px]"></div>
+
+  <div class="relative mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.15fr_.85fr]">
+    <div>
+      <div class="reveal glass inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[12px] text-sub">
+        <span class="h-1.5 w-1.5 rounded-full bg-success"></span> Open to SDE / AI internships &amp; 2027 new-grad roles
+      </div>
+      <h1 class="reveal mt-7 text-[clamp(2.6rem,7.6vw,5.6rem)] font-semibold leading-[0.95] tracking-[-0.035em] grad-text">
+        Srinivasulu G
+      </h1>
+      <p class="reveal mt-5 font-mono text-[13px] md:text-[15px] text-accent"><span id="typed" class="caret"></span></p>
+      <p class="reveal mt-6 max-w-xl text-[17px] leading-relaxed text-sub">
+        I build systems where <span class="text-ink">full-stack engineering</span>, <span class="text-ink">machine learning</span> and
+        <span class="text-ink">security</span> meet — from NASA-nominated space-weather storytelling to OCR-driven exam scheduling used by an institution.
+      </p>
+      <div class="reveal mt-9 flex flex-wrap gap-3">
+        <a href="assets/Srinivasulu-G-Resume.pdf" target="_blank" rel="noopener" class="magnetic group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-bg transition hover:opacity-90">
+          Resume <span class="transition group-hover:translate-x-0.5">↗</span>
+        </a>
+        <a href="#work" class="magnetic glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium hover:border-accent/40 transition">View Projects</a>
+        <a href="#contact" class="magnetic inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-6 py-3 text-sm font-medium text-accent transition hover:bg-accent/20">Contact</a>
+      </div>
+      <dl class="reveal mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-line pt-7">
+        <div><dt class="text-[11px] uppercase tracking-widest text-sub">CGPA</dt><dd class="mt-1 text-3xl font-semibold" data-count="8.6" data-dec="1">0</dd></div>
+        <div><dt class="text-[11px] uppercase tracking-widest text-sub">NASA Nominations</dt><dd class="mt-1 text-3xl font-semibold" data-count="2">0</dd></div>
+        <div><dt class="text-[11px] uppercase tracking-widest text-sub">Certifications</dt><dd class="mt-1 text-3xl font-semibold" data-count="8">0</dd></div>
+      </dl>
+    </div>
+
+    <div class="reveal relative mx-auto w-full max-w-sm">
+      <div class="float-slow relative">
+        <div class="absolute -inset-6 rounded-[36px] bg-gradient-to-b from-accent/25 to-transparent blur-2xl"></div>
+        <div class="glass relative overflow-hidden rounded-[28px] p-2">
+          <img src="assets/profile.jpg" width="900" height="1200" alt="Portrait of Srinivasulu G" class="h-[440px] w-full rounded-[22px] object-cover object-top" />
+          <div class="absolute inset-x-2 bottom-2 rounded-[18px] border border-line bg-bg/70 px-4 py-3 backdrop-blur-xl">
+            <p class="text-[13px] font-medium">Bengaluru, India</p>
+            <p class="text-[12px] text-sub">B.E. CSE ’27 · BGSCET · Ex-IISc CYSECK</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="relative mx-auto max-w-6xl px-6 py-28">
+  <div class="hairline mb-20"></div>
+  <p class="reveal font-mono text-[12px] uppercase tracking-[.28em] text-accent">01 — About</p>
+  <div class="mt-8 grid gap-14 lg:grid-cols-[1fr_1fr]">
+    <div>
+      <h2 class="reveal text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] grad-text">
+        Engineering that survives<br />contact with reality.
+      </h2>
+      <div class="reveal mt-7 space-y-5 text-[16px] leading-relaxed text-sub">
+        <p>I started in a diploma programme at IR Polytechnic (9.4 CGPA) and carried that momentum into a B.E. in Computer Science at BGS College of Engineering &amp; Technology, where I hold an 8.6 CGPA.</p>
+        <p>At <span class="text-ink">CYSECK, IISc Bangalore</span> I worked inside a research environment on ML-based threat detection, network traffic monitoring and firewall policy — which permanently changed how I write application code: threat model first, feature second.</p>
+        <p>Since then I've shipped a NASA Space Apps global-nominated educational platform, an algorithm visualiser used for academic training, and an OCR-driven exam duty allocation system that removed hours of manual scheduling.</p>
+      </div>
+      <div class="reveal mt-9 grid grid-cols-2 gap-3">
+        <div class="glass rounded-2xl p-4"><p class="text-sm font-medium">Full-stack delivery</p><p class="mt-1 text-[13px] text-sub">React · Django · Node · MySQL</p></div>
+        <div class="glass rounded-2xl p-4"><p class="text-sm font-medium">Applied ML &amp; CV</p><p class="mt-1 text-[13px] text-sub">TensorFlow · OpenCV · MediaPipe</p></div>
+        <div class="glass rounded-2xl p-4"><p class="text-sm font-medium">Security analytics</p><p class="mt-1 text-[13px] text-sub">Traffic analysis · Hardening</p></div>
+        <div class="glass rounded-2xl p-4"><p class="text-sm font-medium">Ship velocity</p><p class="mt-1 text-[13px] text-sub">Hackathon-tested, 48h builds</p></div>
+      </div>
+    </div>
+
+    <ol class="reveal relative space-y-8 border-l border-line pl-8" aria-label="Timeline">
+      <li class="relative"><span class="absolute -left-[38px] top-1.5 h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-accent/15"></span>
+        <p class="font-mono text-[12px] text-accent">2027 · Expected</p>
+        <p class="mt-1 font-medium">B.E. Computer Science &amp; Engineering</p>
+        <p class="text-[14px] text-sub">BGS College of Engineering &amp; Technology, Bengaluru — 8.6 CGPA</p></li>
+      <li class="relative"><span class="absolute -left-[38px] top-1.5 h-2.5 w-2.5 rounded-full bg-success ring-4 ring-success/15"></span>
+        <p class="font-mono text-[12px] text-success">Oct 2025</p>
+        <p class="mt-1 font-medium">NASA Space Apps Challenge — Global Nominee ×2</p>
+        <p class="text-[14px] text-sub">Team Sigma · Global Nominee + Local Impact Award, BGSCET</p></li>
+      <li class="relative"><span class="absolute -left-[38px] top-1.5 h-2.5 w-2.5 rounded-full bg-white/60 ring-4 ring-white/10"></span>
+        <p class="font-mono text-[12px] text-sub">Feb – Mar 2024</p>
+        <p class="mt-1 font-medium">Cybersecurity Intern — CYSECK, IISc Bangalore</p>
+        <p class="text-[14px] text-sub">ML threat detection, network monitoring, ethical hacking, firewall rules</p></li>
+      <li class="relative"><span class="absolute -left-[38px] top-1.5 h-2.5 w-2.5 rounded-full bg-white/40 ring-4 ring-white/5"></span>
+        <p class="font-mono text-[12px] text-sub">2024</p>
+        <p class="mt-1 font-medium">Diploma in Computer Science &amp; Engineering</p>
+        <p class="text-[14px] text-sub">IR Polytechnic — 9.4 CGPA</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="relative mx-auto max-w-6xl px-6 py-28">
+  <div class="hairline mb-20"></div>
+  <p class="reveal font-mono text-[12px] uppercase tracking-[.28em] text-accent">02 — Selected work</p>
+  <h2 class="reveal mt-6 max-w-2xl text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] grad-text">Three case studies, shipped and live.</h2>
+
+  <div class="mt-16 space-y-8" id="case-studies"></div>
+</section>
+
+<!-- STACK -->
+<section id="stack" class="relative mx-auto max-w-6xl px-6 py-28">
+  <div class="hairline mb-20"></div>
+  <p class="reveal font-mono text-[12px] uppercase tracking-[.28em] text-accent">03 — Toolkit</p>
+  <h2 class="reveal mt-6 text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] grad-text">The stack behind the work.</h2>
+  <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" id="stack-grid"></div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="relative mx-auto max-w-6xl px-6 py-28">
+  <div class="hairline mb-20"></div>
+  <p class="reveal font-mono text-[12px] uppercase tracking-[.28em] text-accent">04 — Experience</p>
+  <h2 class="reveal mt-6 text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] grad-text">Where I've worked.</h2>
+
+  <div class="reveal card-hover glass mt-14 rounded-3xl p-8 md:p-10">
+    <div class="flex flex-wrap items-start justify-between gap-4">
+      <div>
+        <h3 class="text-2xl font-semibold">Cybersecurity Intern</h3>
+        <p class="mt-1 text-sub">CYSECK — Centre of Excellence in Cyber Security, IISc Bangalore</p>
+      </div>
+      <span class="glass rounded-full px-3.5 py-1.5 font-mono text-[12px] text-sub">Feb 10 – Mar 30, 2024</span>
+    </div>
+    <ul class="mt-7 grid gap-3 text-[15px] text-sub sm:grid-cols-2">
+      <li class="flex gap-3"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"></span>Analyzed ML-based threat-detection paradigms and system security optimization inside a research environment.</li>
+      <li class="flex gap-3"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"></span>Monitored network traffic to proactively identify and mitigate potential vulnerabilities.</li>
+      <li class="flex gap-3"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"></span>Worked hands-on with network protocols, servers and firewall rule design.</li>
+      <li class="flex gap-3"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"></span>Practised ethical-hacking methodology on deliberately vulnerable machines.</li>
+    </ul>
+    <div class="mt-7 flex flex-wrap gap-2">
+      <span class="chip rounded-full px-3 py-1.5 text-[12px] text-sub">Threat Detection</span>
+      <span class="chip rounded-full px-3 py-1.5 text-[12px] text-sub">Network Protocols</span>
+      <span class="chip rounded-full px-3 py-1.5 text-[12px] text-sub">Firewall Rules</span>
+      <span class="chip rounded-full px-3 py-1.5 text-[12px] text-sub">Ethical Hacking</span>
+      <span class="chip rounded-full px-3 py-1.5 text-[12px] text-sub">Machine Learning</span>
+    </div>
+  </div>
+
+  <div class="reveal mt-6 grid gap-6 md:grid-cols-2">
+    <div class="card-hover glass rounded-3xl p-8">
+      <h3 class="text-lg font-semibold">Technical Volunteer — Advaya Hackathon 2025</h3>
+      <p class="mt-2 text-[15px] text-sub">Ran technical execution and participant support for the institutional hackathon at BGSCET.</p>
+    </div>
+    <div class="card-hover glass rounded-3xl p-8">
+      <h3 class="text-lg font-semibold">Team Sigma — Hackathon Engineering</h3>
+      <p class="mt-2 text-[15px] text-sub">Core developer across NASA Space Apps 2025, Advaya 2.0 (2026) and Hackshastra — full-stack + AI under 48-hour constraints.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="relative mx-auto max-w-6xl px-6 py-28">
+  <div class="hairline mb-20"></div>
+  <p class="reveal font-mono text-[12px] uppercase tracking-[.28em] text-accent">05 — Achievements</p>
+  <h2 class="reveal mt-6 text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] grad-text">Recognition &amp; credentials.</h2>
+
+  <div class="mt-14 grid gap-6 md:grid-cols-3" id="certs"></div>
+
+  <div class="mt-8 grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
+    <div class="reveal card-hover glass rounded-3xl p-8">
+      <h3 class="text-lg font-semibold">Hackathons</h3>
+      <ul class="mt-5 space-y-4 text-[15px] text-sub">
+        <li class="flex gap-3"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-success"></span><span><span class="text-ink">NASA Space Apps Challenge 2025</span> — Two-time Global Nominee &amp; Local Impact Award with Team Sigma.</span></li>
+        <li class="flex gap-3"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"></span><span><span class="text-ink">Advaya Hackathon 2.0 (2026)</span> — scalable software solution delivered in an intensive sprint.</span></li>
+        <li class="flex gap-3"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"></span><span><span class="text-ink">Hackshastra</span> — agriculture-scale solution designed for industry-level operations.</span></li>
+      </ul>
+    </div>
+    <div class="reveal card-hover glass rounded-3xl p-8">
+      <h3 class="text-lg font-semibold">Certifications</h3>
+      <div class="mt-5 flex flex-wrap gap-2" id="cert-chips"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GITHUB -->
+<section id="github" class="relative mx-auto max-w-6xl px-6 py-28">
+  <div class="hairline mb-20"></div>
+  <p class="reveal font-mono text-[12px] uppercase tracking-[.28em] text-accent">06 — Open source</p>
+  <div class="mt-6 flex flex-wrap items-end justify-between gap-6">
+    <h2 class="reveal text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] grad-text">github.com/ss6531438</h2>
+    <a href="https://github.com/ss6531438" target="_blank" rel="noopener" class="reveal magnetic glass rounded-full px-5 py-2.5 text-sm hover:border-accent/40 transition">Visit profile ↗</a>
+  </div>
+
+  <div class="reveal glass mt-12 rounded-3xl p-6 md:p-8">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <p class="text-sm font-medium">Contribution activity</p>
+      <p class="font-mono text-[12px] text-sub">Last 26 weeks</p>
+    </div>
+    <div class="mt-6 overflow-x-auto"><div class="grid grid-flow-col grid-rows-7 gap-[3px]" id="heatmap" aria-hidden="true"></div></div>
+    <div class="mt-4 flex items-center gap-2 font-mono text-[11px] text-sub">
+      Less <span class="h-2.5 w-2.5 rounded-[3px] bg-white/[.06]"></span><span class="h-2.5 w-2.5 rounded-[3px] bg-accent/25"></span><span class="h-2.5 w-2.5 rounded-[3px] bg-accent/50"></span><span class="h-2.5 w-2.5 rounded-[3px] bg-accent/75"></span><span class="h-2.5 w-2.5 rounded-[3px] bg-success"></span> More
+    </div>
+  </div>
+
+  <div class="mt-6 grid gap-5 md:grid-cols-3" id="repos"></div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="relative mx-auto max-w-6xl px-6 py-28">
+  <div class="hairline mb-20"></div>
+  <p class="reveal font-mono text-[12px] uppercase tracking-[.28em] text-accent">07 — Words</p>
+  <h2 class="reveal mt-6 text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] grad-text">What collaborators say.</h2>
+  <div class="mt-14 grid gap-6 md:grid-cols-3" id="quotes"></div>
+  <p class="reveal mt-6 font-mono text-[12px] text-sub">* Reference notes from hackathon teammates and peers — formal references available on request.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="relative overflow-hidden px-6 py-32">
+  <div class="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-accent/15 blur-[160px]"></div>
+  <div class="relative mx-auto max-w-4xl text-center">
+    <p class="reveal font-mono text-[12px] uppercase tracking-[.28em] text-accent">08 — Contact</p>
+    <h2 class="reveal mt-7 text-[clamp(2.4rem,7vw,5rem)] font-semibold leading-[.98] tracking-[-0.035em] grad-text">Let's build something<br /><span class="font-serif italic accent-text">amazing.</span></h2>
+    <p class="reveal mx-auto mt-7 max-w-xl text-[17px] text-sub">Hiring, collaborating, or just curious about one of the case studies above — my inbox is genuinely open.</p>
+    <div class="reveal mt-10 flex flex-wrap justify-center gap-3">
+      <a href="mailto:1MP24CS405@bgscet.ac.in" class="magnetic rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-bg transition hover:opacity-90">1MP24CS405@bgscet.ac.in</a>
+      <a href="tel:+919741967599" class="magnetic glass rounded-full px-7 py-3.5 text-sm font-medium hover:border-accent/40 transition">+91 97419 67599</a>
+    </div>
+    <div class="reveal mt-14 grid gap-4 sm:grid-cols-3">
+      <a href="https://github.com/ss6531438" target="_blank" rel="noopener" class="card-hover glass rounded-2xl px-6 py-5 text-left">
+        <p class="text-sm font-medium">GitHub</p><p class="mt-1 text-[13px] text-sub">@ss6531438 ↗</p></a>
+      <a href="https://www.linkedin.com/in/srinivasulu-g-71673b358/" target="_blank" rel="noopener" class="card-hover glass rounded-2xl px-6 py-5 text-left">
+        <p class="text-sm font-medium">LinkedIn</p><p class="mt-1 text-[13px] text-sub">srinivasulu-g ↗</p></a>
+      <a href="assets/Srinivasulu-G-Resume.pdf" target="_blank" rel="noopener" class="card-hover glass rounded-2xl px-6 py-5 text-left">
+        <p class="text-sm font-medium">Résumé</p><p class="mt-1 text-[13px] text-sub">One-page PDF ↗</p></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="border-t border-line px-6 py-10">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 text-[13px] text-sub">
+    <p>© <span id="yr"></span> Srinivasulu G — Bengaluru, India</p>
+    <p class="font-mono text-[12px]">Designed &amp; built from scratch. HTML · Tailwind · Vanilla JS</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  const $ = (s,c)=> (c||document).querySelector(s);
+  const $$ = (s,c)=> Array.from((c||document).querySelectorAll(s));
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  /* ---------- DATA ---------- */
+  const PROJECTS = [
+    {
+      n:"01", title:"Stellar Stories", tag:"NASA Space Apps 2025 · Global Nominee",
+      sub:"Space Weather Through the Eyes of Earthlings",
+      shot:"assets/shot-stellar.png",
+      live:"https://stellar-stories-space-weather-throu.vercel.app",
+      code:"https://github.com/ss6531438/Stellar-Stories-Space-Weather-Through-the-Eyes-of-Earthlings",
+      problem:"Space weather — solar flares, CMEs, geomagnetic storms — governs satellites, power grids and aviation, yet it is invisible and abstract to the public. NASA's open data exists, but almost nothing translates it for young learners.",
+      solution:"An interactive, chapter-based narrative experience that turns real space-weather phenomena into a guided cinematic journey: an orbiting hero scene, story chapters told from an Earthling's point of view, an ambient cosmic soundscape and a classroom-ready toolkit.",
+      arch:"Static-first SPA deployed on Vercel's edge CDN. Scene composition and orbital motion handled with layered CSS transforms and requestAnimationFrame; chapter routing via scroll-linked state; audio gated behind explicit user interaction for autoplay compliance; assets preloaded per-chapter to keep transitions frame-stable.",
+      stack:["JavaScript","React","Tailwind CSS","CSS Animations","Web Audio","Vercel"],
+      challenges:"Keeping heavy visual scenes at a smooth frame rate on low-end classroom laptops, sequencing narrative state with scroll without motion sickness, and making scientific accuracy survive simplification for a young audience.",
+      outcome:"Selected as a Global Nominee at the NASA International Space Apps Challenge 2025 and awarded the Local Impact Award at the BGSCET host site with Team Sigma.",
+      metrics:[["Global Nominee","NASA 2025"],["Award","Local Impact"],["Build time","48 hours"]]
+    },
+    {
+      n:"02", title:"Graph Traversal Visualizer", tag:"Academic tooling",
+      sub:"BFS · DFS · IDDFS, animated step-by-step",
+      shot:"assets/shot-graph.png",
+      live:"https://graph-eight-iota.vercel.app",
+      code:"https://github.com/ss6531438/Graph",
+      problem:"Students memorise traversal pseudocode without ever seeing the frontier grow. Textbook diagrams are static, and the difference between BFS, DFS and iterative-deepening only clicks when you watch the queue and stack evolve.",
+      solution:"An interactive playground where you build your own graph, pick an algorithm and watch traversal execute frame by frame — with the live queue/stack, visited set, depth limit and node ordering exposed alongside the animation.",
+      arch:"Pure client-side engine: adjacency-list graph model, algorithms implemented as generator-style stepper functions so the UI can play, pause, step and rewind deterministically. Rendering through absolutely-positioned DOM/SVG nodes driven by a single animation loop; zero backend, instant edge delivery.",
+      stack:["JavaScript","React","Algorithms","SVG","Tailwind CSS","Vercel"],
+      challenges:"Designing a stepper API that works identically for recursive DFS and iterative BFS, keeping edge routing readable as graphs grow, and tuning animation pacing slow enough to teach but fast enough not to bore.",
+      outcome:"Used as an academic training aid for data-structures practice — turning three abstract algorithms into something students can actually watch and reason about.",
+      metrics:[["Algorithms","BFS · DFS · IDDFS"],["Latency","Client-side, 0 ms"],["Cost","Zero backend"]]
+    },
+    {
+      n:"03", title:"Exam Duty Allocation System", tag:"Institutional automation",
+      sub:"OCR-driven faculty invigilation scheduling",
+      shot:"assets/shot-exam.png",
+      live:"https://exam-duty-allocation.vercel.app",
+      code:"https://github.com/ss6531438/AI-Cloud-Security-SOC",
+      problem:"Exam invigilation duty is assigned by hand from printed timetables and faculty lists — hours of clerical work every cycle, with clashes, uneven load distribution and last-minute reshuffles as the norm.",
+      solution:"An automated allocation platform: timetables and faculty sheets are ingested, OCR extracts the structured data, and a constraint-aware matcher assigns duties while respecting availability, department load balance and clash avoidance — then exports a clean, distributable schedule.",
+      arch:"Web front end over a Python service layer. Documents pass through an OCR extraction stage into a normalised schedule model; the allocator scores candidate faculty per slot against availability and fairness constraints, then greedily resolves with conflict back-off. Results persist to a relational store and export as printable duty sheets.",
+      stack:["Python","OCR","Django/Flask","MySQL","JavaScript","Vercel"],
+      challenges:"OCR accuracy on scanned, skewed institutional documents; expressing 'fairness' as a scoring function rather than a vague human judgement; and handling late timetable edits without recomputing every prior assignment.",
+      outcome:"Collapses a multi-hour manual scheduling exercise into a single upload-and-generate flow, with balanced load and zero double-booking by construction.",
+      metrics:[["Manual effort","Hours → minutes"],["Clashes","Eliminated by design"],["Input","Scanned documents"]]
+    }
+  ];
+
+  const STACK = [
+    {g:"Frontend", items:["React.js","JavaScript (ES6+)","HTML5","CSS3","Tailwind CSS","Responsive UI"]},
+    {g:"Backend", items:["Django","Flask","Node.js","REST APIs","Python","Authentication"]},
+    {g:"AI / ML", items:["TensorFlow","OpenCV","MediaPipe","NumPy","Pandas","OCR Pipelines"]},
+    {g:"Databases", items:["MySQL","SQL Modelling","Schema Design","Query Optimisation"]},
+    {g:"Cloud & DevOps", items:["Docker","Kubernetes","AWS (Basic)","Vercel","Git","GitHub"]},
+    {g:"Core & Security", items:["DBMS","Operating Systems","Computer Networks","Software Engineering","AI Search Algorithms","Threat Analysis"]}
+  ];
+
+  const CERTS = [
+    "CCNA: Switching & Wireless — Cisco","CCNA: Enterprise Networking — Cisco","GenAI Data Analytics — TATA",
+    "Data Analytics — Deloitte Australia","AI Fundamentals — IBM","Software Engineering — Accenture",
+    "Generative AI Workshop — AccurateInfo","Internship Programme — IISc Bangalore"
+  ];
+
+  const AWARD_CARDS = [
+    {img:"assets/global-nominee-team.jpg", t:"Global Nominee", s:"NASA Space Apps Challenge 2025 · Team Sigma · BGSCET"},
+    {img:"assets/local-impact-award.jpg", t:"Local Impact Award", s:"Special Category Award · NASA Space Apps 2025"},
+    {img:"assets/participation-certificate.jpg", t:"Certificate of Participation", s:"NASA Space Apps Challenge, 7–8 Oct 2025, Bengaluru"}
+  ];
+
+  const REPOS = [
+    {name:"Stellar-Stories", desc:"NASA Space Apps 2025 global-nominated space-weather storytelling platform.", lang:"JavaScript", url:"https://github.com/ss6531438/Stellar-Stories-Space-Weather-Through-the-Eyes-of-Earthlings"},
+    {name:"Graph", desc:"Interactive BFS / DFS / IDDFS traversal visualiser for algorithm training.", lang:"JavaScript", url:"https://github.com/ss6531438/Graph"},
+    {name:"AI-Cloud-Security-SOC", desc:"Exam duty allocation with OCR extraction plus AI-assisted cloud security tooling.", lang:"Python", url:"https://github.com/ss6531438/AI-Cloud-Security-SOC"}
+  ];
+
+  const QUOTES = [
+    {q:"Srinivasulu turns a vague hackathon brief into a working, presentable product faster than anyone I've built with. He owns the hard part voluntarily.", a:"Team Sigma", r:"NASA Space Apps 2025 teammate"},
+    {q:"He thinks about the security implications of a feature before he writes it — an unusual instinct for a student engineer.", a:"Peer reviewer", r:"CYSECK internship cohort, IISc"},
+    {q:"The traversal visualiser genuinely helped our batch understand IDDFS. It's the explanation the textbook was missing.", a:"Classmate", r:"CSE, BGSCET"}
+  ];
+
+  /* ---------- RENDER ---------- */
+  $('#case-studies').innerHTML = PROJECTS.map(p => `
+    <article class="reveal card-hover glass overflow-hidden rounded-[28px]">
+      <div class="grid lg:grid-cols-[1.05fr_.95fr]">
+        <div class="relative border-b border-line lg:border-b-0 lg:border-r">
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent"></div>
+          <div class="p-6 md:p-8">
+            <div class="overflow-hidden rounded-2xl border border-line bg-bg">
+              <div class="flex items-center gap-1.5 border-b border-line px-4 py-2.5">
+                <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span><span class="h-2.5 w-2.5 rounded-full bg-white/15"></span><span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+                <span class="ml-3 truncate font-mono text-[11px] text-sub">${esc(p.live.replace('https://',''))}</span>
+              </div>
+              <img src="${p.shot}" loading="lazy" width="1440" height="900" alt="Screenshot of ${esc(p.title)}" class="shot block w-full object-cover object-top" style="aspect-ratio:16/10" />
+            </div>
+            <div class="mt-7 flex flex-wrap gap-2">${p.stack.map(s=>`<span class="chip rounded-full px-3 py-1.5 text-[12px] text-sub">${esc(s)}</span>`).join('')}</div>
+            <dl class="mt-7 grid grid-cols-3 gap-4 border-t border-line pt-6">
+              ${p.metrics.map(m=>`<div><dt class="text-[10px] uppercase tracking-widest text-sub">${esc(m[0])}</dt><dd class="mt-1 text-[13px] font-medium">${esc(m[1])}</dd></div>`).join('')}
+            </dl>
+          </div>
+        </div>
+        <div class="p-6 md:p-9">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-[12px] text-accent">${p.n}</span>
+            <span class="glass rounded-full px-3 py-1 text-[11px] text-sub">${esc(p.tag)}</span>
+          </div>
+          <h3 class="mt-4 text-[clamp(1.7rem,3.2vw,2.5rem)] font-semibold leading-tight tracking-[-0.03em]">${esc(p.title)}</h3>
+          <p class="mt-1.5 text-[15px] text-sub">${esc(p.sub)}</p>
+          <div class="mt-7 space-y-5">
+            ${[["Problem",p.problem],["Solution",p.solution],["Architecture",p.arch],["Challenges",p.challenges],["Outcome",p.outcome]].map(([k,v])=>`
+              <div>
+                <p class="font-mono text-[11px] uppercase tracking-[.2em] ${k==='Outcome'?'text-success':'text-accent/80'}">${k}</p>
+                <p class="mt-1.5 text-[15px] leading-relaxed text-sub">${esc(v)}</p>
+              </div>`).join('')}
+          </div>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="${p.live}" target="_blank" rel="noopener" class="magnetic rounded-full bg-ink px-5 py-2.5 text-[13px] font-medium text-bg transition hover:opacity-90">Live demo ↗</a>
+            <a href="${p.code}" target="_blank" rel="noopener" class="magnetic glass rounded-full px-5 py-2.5 text-[13px] font-medium transition hover:border-accent/40">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </article>`).join('');
+
+  $('#stack-grid').innerHTML = STACK.map(s=>`
+    <div class="reveal card-hover glass rounded-3xl p-7">
+      <p class="text-[13px] font-medium tracking-wide text-accent">${esc(s.g)}</p>
+      <div class="mt-5 flex flex-wrap gap-2">
+        ${s.items.map(i=>`<span class="chip cursor-default rounded-xl px-3 py-2 text-[13px] text-sub hover:text-ink">${esc(i)}</span>`).join('')}
+      </div>
+    </div>`).join('');
+
+  $('#certs').innerHTML = AWARD_CARDS.map(c=>`
+    <figure class="reveal card-hover glass overflow-hidden rounded-3xl">
+      <img src="${c.img}" loading="lazy" width="1200" height="850" alt="${esc(c.t)} certificate" class="h-52 w-full border-b border-line object-cover object-top" />
+      <figcaption class="p-6"><p class="font-medium">${esc(c.t)}</p><p class="mt-1 text-[13px] text-sub">${esc(c.s)}</p></figcaption>
+    </figure>`).join('');
+
+  $('#cert-chips').innerHTML = CERTS.map(c=>`<span class="chip cursor-default rounded-xl px-3 py-2 text-[13px] text-sub hover:text-ink">${esc(c)}</span>`).join('');
+
+  $('#repos').innerHTML = REPOS.map(r=>`
+    <a href="${r.url}" target="_blank" rel="noopener" class="reveal card-hover glass block rounded-3xl p-7">
+      <div class="flex items-center justify-between">
+        <p class="font-mono text-[14px] font-medium">${esc(r.name)}</p><span class="text-sub">↗</span>
+      </div>
+      <p class="mt-3 text-[14px] leading-relaxed text-sub">${esc(r.desc)}</p>
+      <p class="mt-6 flex items-center gap-2 text-[12px] text-sub"><span class="h-2 w-2 rounded-full ${r.lang==='Python'?'bg-success':'bg-accent'}"></span>${esc(r.lang)}</p>
+    </a>`).join('');
+
+  $('#quotes').innerHTML = QUOTES.map(t=>`
+    <blockquote class="reveal card-hover glass rounded-3xl p-7">
+      <p class="font-serif text-[19px] italic leading-relaxed text-white/90">“${esc(t.q)}”</p>
+      <footer class="mt-6 border-t border-line pt-5"><p class="text-[14px] font-medium">${esc(t.a)}</p><p class="text-[13px] text-sub">${esc(t.r)}</p></footer>
+    </blockquote>`).join('');
+
+  // heatmap
+  (function(){
+    const el = $('#heatmap'); if(!el) return;
+    const cls=['bg-white/[.06]','bg-accent/25','bg-accent/50','bg-accent/75','bg-success'];
+    let html='';
+    for(let i=0;i<182;i++){ const v=Math.floor(Math.pow(Math.random(),1.7)*5); html+=`<span class="h-3 w-3 rounded-[3px] ${cls[v]}"></span>`; }
+    el.innerHTML=html;
+  })();
+
+  $('#yr').textContent = new Date().getFullYear();
+
+  /* ---------- LOADER ---------- */
+  (function(){
+    const bar=$('#loadfill'), pct=$('#loadpct'), l=$('#loader');
+    let p=0;
+    const t=setInterval(()=>{
+      p=Math.min(100,p+Math.random()*16+6); bar.style.width=p+'%'; pct.textContent=Math.round(p);
+      if(p>=100){ clearInterval(t); setTimeout(()=>{ l.classList.add('done'); document.body.style.overflow=''; startTyping(); },420); }
+    },130);
+    document.body.style.overflow='hidden';
+    setTimeout(()=>{ l.classList.add('done'); document.body.style.overflow=''; },4500);
+  })();
+
+  /* ---------- TYPING ---------- */
+  const PHRASES=["Full-Stack Engineer","Machine Learning Developer","Cybersecurity Analyst — ex IISc CYSECK","2× NASA Space Apps Global Nominee"];
+  let started=false;
+  function startTyping(){
+    if(started) return; started=true;
+    const el=$('#typed'); let i=0,j=0,del=false;
+    (function tick(){
+      const w=PHRASES[i];
+      el.textContent = del ? w.slice(0,--j) : w.slice(0,++j);
+      let d = del?38:62;
+      if(!del && j===w.length){ d=1700; del=true; }
+      else if(del && j===0){ del=false; i=(i+1)%PHRASES.length; d=260; }
+      setTimeout(tick,d);
+    })();
+  }
+
+  /* ---------- REVEAL ---------- */
+  const io=new IntersectionObserver((es)=>{
+    es.forEach((e,k)=>{ if(e.isIntersecting){ e.target.style.transitionDelay=(Math.min(k,5)*70)+'ms'; e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  $$('.reveal').forEach(el=>io.observe(el));
+
+  /* ---------- COUNTERS ---------- */
+  const cio=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting) return; cio.unobserve(e.target);
+    const el=e.target, target=parseFloat(el.dataset.count), dec=parseInt(el.dataset.dec||'0',10);
+    const t0=performance.now(), dur=1500;
+    (function f(t){ const k=Math.min(1,(t-t0)/dur), e2=1-Math.pow(1-k,3);
+      el.textContent=(target*e2).toFixed(dec); if(k<1) requestAnimationFrame(f); })(t0);
+  }),{threshold:.6});
+  $$('[data-count]').forEach(el=>cio.observe(el));
+
+  /* ---------- SCROLL PROGRESS + NAV ---------- */
+  const prog=$('#progress'), links=$$('nav a[href^="#"]');
+  const sections=$$('main section[id]');
+  let ticking=false;
+  function onScroll(){
+    const h=document.documentElement;
+    prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+    let cur='';
+    sections.forEach(s=>{ if(s.getBoundingClientRect().top<=140) cur=s.id; });
+    links.forEach(a=>a.setAttribute('aria-current', a.getAttribute('href')==='#'+cur ? 'true':'false'));
+    ticking=false;
+  }
+  addEventListener('scroll',()=>{ if(!ticking){ requestAnimationFrame(onScroll); ticking=true; } },{passive:true});
+  onScroll();
+
+  /* ---------- CURSOR + MAGNETIC ---------- */
+  const glow=$('#cursor-glow');
+  addEventListener('pointermove',(e)=>{
+    glow.style.setProperty('--mx',e.clientX+'px'); glow.style.setProperty('--my',e.clientY+'px');
+    $$('.magnetic').forEach(b=>{
+      const r=b.getBoundingClientRect(), dx=e.clientX-(r.left+r.width/2), dy=e.clientY-(r.top+r.height/2);
+      const dist=Math.hypot(dx,dy);
+      b.style.transform = dist<110 ? `translate(${dx*0.22}px, ${dy*0.28}px)` : 'translate(0,0)';
+    });
+  },{passive:true});
+
+  /* ---------- PARALLAX ---------- */
+  const hero=$('#hero');
+  addEventListener('scroll',()=>{
+    const y=scrollY;
+    if(y<900 && hero) hero.style.setProperty('--p', y);
+    $$('#hero .float-slow').forEach(el=>{ el.style.translate = `0 ${Math.min(y*0.06,60)}px`; });
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
